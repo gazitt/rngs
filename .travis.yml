@@ -6,7 +6,6 @@ branches:
   only: master
 script:
   - make test
-before_deploy:
+after_success:
   - make release
-deploy:
   - make release-upload
