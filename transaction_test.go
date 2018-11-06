@@ -29,7 +29,7 @@ func TestTransaction(t *testing.T) {
 
 	tx := Transaction{
 		data:   []Names{},
-		fn:     m.execfunc,
+		exec:   m.execfunc,
 		output: ioutil.Discard,
 	}
 

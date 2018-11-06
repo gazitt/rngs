@@ -37,6 +37,7 @@ type Options struct {
 	Verbose    bool
 	Simulate   bool
 	NoRevert   bool
+	Force      bool
 	Index      int
 }
 
@@ -84,10 +85,11 @@ Syntax: '[Flags]/[Pattern]/\"[Replacement]\"'`,
 			return o.Expression.Parse(v.String())
 		})
 
-	flago.StringVar(&o.File, "file", 'f', "index.js", "Specify a script file", nil)
+	flago.StringVar(&o.File, "name", 'n', "index.js", "Specify a script file", nil)
 	flago.BoolVar(&o.Verbose, "verbose", 'v', false, "Verbose output", nil)
 	flago.BoolVar(&o.Simulate, "simulate", 's', false, "Simulation. No rename is done", nil)
-	flago.BoolVar(&o.NoRevert, "no-revert", 'n', false, "Does not revert even if an error occurs", nil)
+	flago.BoolVar(&o.NoRevert, "no-revert", 'r', false, "Does not revert even if an error occurs", nil)
+	flago.BoolVar(&o.Force, "force", 'f', false, "", nil)
 
 	flago.IntVar(&o.Index, "index", 'i', 0, "Initial value of index number",
 		func(v flago.Value) error {

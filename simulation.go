@@ -9,9 +9,10 @@ type Simulation struct {
 	oldNames map[string]struct{}
 	newNames map[string]struct{}
 	exists   func(string) bool
+	force    bool
 }
 
-func GetSimulationFunc(a []string, existsfunc func(string) bool) func(string, string) error {
+func GetSimulationFunc(force bool, a []string, existsfunc func(string) bool) func(string, string) error {
 	s := new(Simulation)
 	s.oldNames = make(map[string]struct{}, len(a))
 	for _, v := range a {
@@ -24,6 +25,10 @@ func GetSimulationFunc(a []string, existsfunc func(string) bool) func(string, st
 }
 
 func (s *Simulation) simulate(oldname, newname string) error {
+	if s.force {
+		return nil
+	}
+
 	if _, alreadyThere := s.oldNames[newname]; alreadyThere {
 		return fmt.Errorf("Conflict: %s", newname)
 	}
