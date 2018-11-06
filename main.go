@@ -80,7 +80,7 @@ func init() {
 	flago.String("expression", 'e', "",
 		`Specify a simple replace expression.
 Can be Chain by specifying this option multiple.
-Syntax: '[Flags]/[Pattern]/\"[Replacement]\"'`,
+Syntax: '[Flags]/[Expression]/\"[Replacement]\"'`,
 		func(v flago.Value) error {
 			return o.Expression.Parse(v.String())
 		})

@@ -24,7 +24,7 @@ This command-line tool uses JavaScript syntax to rename files or directories.
 <br/>
 
 * Specify the javascript file. (if not specified, using an index.js in the current directory)  
-``$ rngs *.txt -f rename.js``
+``$ rngs *.txt -n rename.js``
 <br/>
 
 * Not use the script file.  
