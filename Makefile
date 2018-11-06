@@ -59,11 +59,13 @@ release-targz: $(ARTIFACTS_DIR)
 release-zip: $(ARTIFACTS_DIR)
 	cd $(RELEASE_DIR) && zip -9 $(CURDIR)/$(ARTIFACTS_DIR)/$(NAME)-$(VERSION)-$(GOOS)-$(GOARCH).zip $(NAME)-$(VERSION)-$(GOOS)-$(GOARCH)/*
 
-release-upload:
+upload-deps:
+	go get -v github.com/tcnksm/ghr
+
+release-upload: upload-deps
 	ghr -u $(GITHUB_USERNAME) -t ${GITHUB_TOKEN} --draft --replace $(VERSION) $(ARTIFACTS_DIR)
 
 deps:
-	go get -v github.com/tcnksm/ghr
 	go get -v github.com/gazitt/flago
 	go get -v github.com/robertkrimen/otto
 
