@@ -8,28 +8,23 @@ This command-line tool uses JavaScript syntax to rename files or directories.
 
 ## Usage
 
-* Create a Script file in the current directory
-<br/>
+* Create a Script file in the current directory  
 ``$ rngs -c``
 <br/>
 
-* Output the change details without actually rename.
-<br/>
+* Output the change details without actually rename.  
 ``$ rngs *.txt -s``
 <br/>
 
-* Sets an initial value of the $index number. (default 0)
-<br/>
+* Sets an initial value of the $index number. (default 0)  
 ``$ rngs *.txt -i 100``
 <br/>
 
-* Specify the javascript file. (if not specified, using an index.js in the current directory)
-<br/>
+* Specify the javascript file. (if not specified, using an index.js in the current directory)  
 ``$ rngs *.txt -f rename.js``
 <br/>
 
-* Not use the script file.
-<br/>
+* Not use the script file.  
 ``$ rngs *.txt -e 'flags(1)/pattern(1)/\"replacement(1)\"' -e 'flags(2)/pattern(2)/\"replacement(2)\"' ``
 <br/>
 <br/>
