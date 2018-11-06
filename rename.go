@@ -74,7 +74,7 @@ func (o *Options) Do(args []string) error {
 
 	tx := NewTransaction(len(args), o.Simulate || o.NoRevert || o.Force)
 	if o.Simulate {
-		if len(script) > 0 {
+		if o.Verbose && len(script) > 0 {
 			fmt.Fprintf(os.Stdout, "Script: %s\n", script)
 		}
 		tx.exec = GetSimulationFunc(o.Force, args, exists)
