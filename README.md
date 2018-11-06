@@ -2,6 +2,9 @@
 ## rngs
 This command-line tool uses JavaScript syntax to rename files or directories.  
 
+[![Build Status](https://travis-ci.org/gazitt/rngs.svg?branch=master)](https://travis-ci.org/gazitt/rngs)
+<br/>
+
 ## Dependencies
 * [otto](https://github.com/robertkrimen/otto) - [(LICENSE)](https://github.com/robertkrimen/otto/blob/master/LICENSE)
 <br/>
