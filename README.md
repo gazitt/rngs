@@ -28,9 +28,8 @@ This command-line tool uses JavaScript syntax to rename files or directories.
 <br/>
 
 * Not use the script file.  
-``$ rngs *.txt -e 'flags(1)/pattern(1)/\"replacement(1)\"' -e 'flags(2)/pattern(2)/\"replacement(2)\"' ``
-<br/>
-Converted into a script like below
+``$ rngs *.txt -e 'flags(1)/pattern(1)/\"replacement(1)\"' -e 'flags(2)/pattern(2)/\"replacement(2)\"' ``  
+Converted into a script like below  
 ```javascript
     $func.join($dirname, $basename.replace(/pattern(1)/flags(1), "replacement(1)")
         .replace(/pattern(2)/flags(2), "replacement(2)"));
